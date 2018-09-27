@@ -1,0 +1,27 @@
+<h1>Test Data</h1>
+
+<div class='table-responsive'>
+  <table class='table'
+          *ngIf='countries$ && countries$.length'>
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Capital</th>
+              <th>Region</th>
+              <th>Population</th>
+          </tr>
+      </thead>
+      <tbody>
+           <tr class='highlight' *ngFor='let country of countries$ | slice:0:10; let i=index'>
+               <td><a routerLink="/detail/{{country.name}}">{{country.name}}</a></td>
+               <td>{{country.capital}}</td>
+               <td>{{country.region}}</td>
+               <td>{{country.population}}</td>
+           </tr>
+      </tbody>
+  </table>
+</div>
+
+<div>
+    <app-graph></app-graph>
+</div>
