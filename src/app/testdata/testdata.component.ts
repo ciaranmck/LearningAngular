@@ -18,5 +18,4 @@ export class TestdataComponent implements OnInit {
       data => this.countries$ = data
     );
   }
-
 }

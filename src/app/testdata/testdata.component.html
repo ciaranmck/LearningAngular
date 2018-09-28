@@ -12,14 +12,16 @@
           </tr>
       </thead>
       <tbody>
-           <tr class='highlight' *ngFor='let country of countries$ | slice:0:10; let i=index'>
+           <tr class='highlight' *ngFor='let country of countries$ | paginate: { itemsPerPage: 10, currentPage: p }'>
                <td><a routerLink="/detail/{{country.name}}">{{country.name}}</a></td>
                <td>{{country.capital}}</td>
                <td>{{country.region}}</td>
                <td>{{country.population}}</td>
            </tr>
       </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </table>
+
 </div>
 
 <div>
